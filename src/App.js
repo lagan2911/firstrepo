@@ -1,24 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+//import Fetchapi from './Fetchapi';
+import Table from './Table';
+import SingleView from './SingleView';
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import AppMain from './AppMain';
+//import Table2 from './Table2';
+//import Listing from './Listing';
+import Deleteapi from './Deleteapi';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+ 
+    {/* <Table2/>
+    <Listing/> */}
+  
+<BrowserRouter>
+<Deleteapi/>
+
+<AppMain/>
+          		<Routes>
+            		<Route path="/singleView/:id" element={<SingleView />} />
+                <Route path="/deleteapi/:id" element={<Deleteapi />} />
+                
+                
+                
+
+
+
+          		</Routes>
+              
+        	</BrowserRouter> 
+          
+    </>
   );
 }
 
